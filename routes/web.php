@@ -16,6 +16,11 @@ use App\Http\Controllers\RegisterController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('/');
 
-Route::get('/register', [RegisterController::class, 'register'])->name('register');
+Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::post('/register', [RegisterController::class, 'register']);
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');

@@ -11,8 +11,11 @@
             <li class="p-4">Login</li>
             <li class="p-4">Dashboard</li>
         </ul>
-        <p>SANDBOX</p>
         <ul class="flex item-center">
+          <li class="p-4">SANDBOX</li>
+        </ul>
+        <ul class="flex item-center">
+            <li class="p-4"><a href="{{ route('/') }}">Home</a></li>
             <li class="p-4">David Perez</li>
             <li class="p-4">logout</li>
         </ul>
