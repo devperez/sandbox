@@ -6,18 +6,34 @@
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
-<body>
-  <nav class="bg-gray-500 flex p-3 justify-between">
-    <ul class="flex item-center">
-      @auth
+<body class="bg-gray-200">
+  <nav class="bg-white flex p-4 justify-between mb-6">
+    <ul class="flex items-center">
       <li>
-        <a class="p-4">David Perez</a>
+        <a class="p-4" href="{{ route('/') }}">Home</a>
       </li>
       <li>
-        <a class="p-4">logout</a>
+        <a class="p-4" href=" {{ route('dashboard') }}">Dashboard</a>
+      </li>
+    </ul>
+
+
+    @auth
+    <ul class="flex items-center">
+      <li>
+        <a class="p-4">{{ auth()->user()->name }}</a>
+      </li>
+      <li>
+        <form action="{{route('logout')}}" method="post">
+          @csrf
+          <button type="submit" class="p-4">Logout</button>
+        </form>
       </li>
       @endauth
-      @guest
+    </ul>
+
+    @guest
+    <ul class="flex items-center">
       <li>
         <a class="p-4" href=" {{ route('login') }}">Login</a>
       </li>
@@ -25,16 +41,9 @@
         <a class="p-4" href=" {{ route('register') }} ">Register</a>
       </li>
       @endguest
-      <li>
-        <a class="p-4" href=" {{ route('dashboard') }}">Dashboard</a>
-      </li>
     </ul>
-    <ul class="flex item-center">
-      <li class="p-4">SANDBOX</li>
-    </ul>
-    <ul class="flex item-center">
-      <a class="p-4" href="{{ route('/') }}">Home</a>
-    </ul>
+
+
   </nav>
   @yield('content')
 
