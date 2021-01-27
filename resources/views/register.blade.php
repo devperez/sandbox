@@ -30,6 +30,9 @@
             </div>
             <button class="bg-blue-600 text-white p-4 w-full rounded" type="submit">Register !</button>
         </form>
+        <div class="flex justify-center pt-4">
+            <p><a class="" href=" {{route('login')}}">Already have an account ? Log in !</p>
+        </div>
     </div>
 </div>
 @endsection

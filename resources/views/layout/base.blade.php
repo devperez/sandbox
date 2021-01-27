@@ -16,7 +16,11 @@
         <a class="p-4" href=" {{ route('dashboard') }}">Dashboard</a>
       </li>
     </ul>
-
+    <ul>
+      <li>
+        Sandbox
+      </li>
+    </ul>
 
     @auth
     <ul class="flex items-center">
@@ -24,9 +28,9 @@
         <a class="p-4">{{ auth()->user()->name }}</a>
       </li>
       <li>
-        <form action="{{route('logout')}}" method="post">
+        <form action="{{route('logout')}}" method="post" class="inline p-4">
           @csrf
-          <button type="submit" class="p-4">Logout</button>
+          <button type="submit">Logout</button>
         </form>
       </li>
       @endauth
