@@ -1,6 +1,9 @@
 @extends('layout.base')
 
 @section('content')
+<div>
+    <h1 class="flex justify-center text-3xl">Create an account !</h1>
+</div>
 <div class="flex justify-center">
     <div class="w-4/12 p-6 rounded-lg">
         <form class="text-center pt-5" action="{{route('register') }}" method="post">
@@ -21,7 +24,7 @@
                 <label class="sr-only" for="password_confirmation">Confirm your password :</label>
                 <input class="border-2 bg-gray-200 w-full p-4 rounded-lg" type="password" id="password_confirmation" name="password_confirmation" placeholder="Enter your password again">
             </div>
-            <button class="bg-blue-600 text-white p-4 w-full rounded" type="submit">Register</button>
+            <button class="bg-blue-600 text-white p-4 w-full rounded" type="submit">Register !</button>
         </form>
     </div>
 </div>
