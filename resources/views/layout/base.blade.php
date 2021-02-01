@@ -6,19 +6,19 @@
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
-<body class="bg-gray-200">
+<body class="bg-gray-200 mb-6">
   <nav class="bg-white flex p-4 justify-between mb-6">
     <ul class="flex items-center">
       <li>
         <a class="p-4" href="{{ route('/') }}">Home</a>
       </li>
       <li>
-        <a class="p-4" href=" {{ route('dashboard') }}">Dashboard</a>
+        <a class="p-4" href=" {{ route('search') }}">Search</a>
       </li>
     </ul>
     <ul>
       <li>
-        Sandbox
+        BandZilla
       </li>
     </ul>
 
@@ -46,11 +46,11 @@
       </li>
       @endguest
     </ul>
-
-
   </nav>
   @yield('content')
-
+  <footer class="bg-white w-full fixed bottom-0 p-4 justify-between">
+    <p class="text-center">BandZilla | &copy; David Perez &diamond; 2021</p>
+  </footer>
 </body>
 
 </html>

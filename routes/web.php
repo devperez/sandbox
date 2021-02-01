@@ -1,10 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FrontController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,10 +17,12 @@ use App\Http\Controllers\DashboardController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', [FrontController::class, 'index'])->name('/');
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
 })->name('/');
+*/
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
@@ -30,6 +33,11 @@ Route::post('/login', [LoginController::class,'login']);
 Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 
 
-Route::get('/dashboard', [DashboardController::class, 'index'])
-    ->name('dashboard')
+Route::get('/search', [SearchController::class, 'index'])
+    ->name('search')
     ->middleware('auth');
+
+Route::post('/search', [SearchController::class, 'searchBand']);
+//Route::get('/search', [SearchController::class, 'searchBand']);
+
+Route::get('/searchResult', [SearchController::class, 'searchBand'])->name('searchResult');
