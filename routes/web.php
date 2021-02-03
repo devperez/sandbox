@@ -1,11 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\InfoController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
-use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\DetailsController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,11 +21,6 @@ use App\Http\Controllers\SearchController;
 */
 Route::get('/', [FrontController::class, 'index'])->name('/');
 
-/*Route::get('/', function () {
-    return view('welcome');
-})->name('/');
-*/
-
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
 
@@ -36,8 +33,10 @@ Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 Route::get('/search', [SearchController::class, 'index'])
     ->name('search')
     ->middleware('auth');
-
 Route::post('/search', [SearchController::class, 'searchBand']);
-//Route::get('/search', [SearchController::class, 'searchBand']);
 
-Route::get('/searchResult', [SearchController::class, 'searchBand'])->name('searchResult');
+
+Route::get('/info', [InfoController::class, 'index'])->name('album');
+Route::post('/info', [InfoController::class, 'searchAlbum']);
+
+Route::post('/details', [DetailsController::class, 'details'])->name('details');

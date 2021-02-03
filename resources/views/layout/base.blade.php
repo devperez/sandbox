@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  <title>♬ BandZilla ♬</title>
 </head>
 
 <body class="bg-gray-200 mb-6">
@@ -13,7 +14,10 @@
         <a class="p-4" href="{{ route('/') }}">Home</a>
       </li>
       <li>
-        <a class="p-4" href=" {{ route('search') }}">Search</a>
+        <a class="p-4" href=" {{ route('search') }}">Band suggestions</a>
+      </li>
+      <li>
+        <a class="p-4" href="{{ route('album') }}">Album info</a>
       </li>
     </ul>
     <ul>
